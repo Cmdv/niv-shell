@@ -1,6 +1,6 @@
 let hsPkgs = import ./default.nix { };
 in hsPkgs.shellFor {
-  packages = ps: [ ps.haskell-nix-template ];
+  packages = ps: [ ps.niv-shell ];
   withHoogle = true;
   tools = {
     cabal = "3.2.0.0";

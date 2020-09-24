@@ -1,6 +1,7 @@
 { sources ? import ./nix/sources.nix
 , haskellNix ? import sources."haskell.nix" { }
-, nixpkgsSrc ? haskellNix.sources.nixpkgs-2003, compiler ? "ghc884" }:
+, nixpkgsSrc ? haskellNix.sources.nixpkgs-2003
+, compiler ? "ghc884" }:
 let
   overlays = haskellNix.nixpkgsArgs.overlays ++ [
     (self: super:
@@ -16,7 +17,7 @@ let
                   repo = "haskell-language-server";
                   rev = "066ce8b94f3be66a011818f748ecb6c6ab7974b8";
                   sha256 =
-                    "0yip8r448r2bfzarwddn4j6jfr4hjwwrn9apb4jyd38fin2am48d";
+                    "19z4lj73xnhypa0w2vyp4ajg2mhg2vgxi6vaf70mmpszzrrbyri7";
                   fetchSubmodules = true;
                 };
                 modules =
@@ -35,7 +36,7 @@ let
 in pkgs.haskell-nix.cabalProject {
   compiler-nix-name = compiler;
   src = pkgs.haskell-nix.haskellLib.cleanGit {
-    name = "haskell-nix-template";
+    name = "niv-shell";
     src = ./.;
   };
 }

@@ -16,12 +16,7 @@ Note: you should run the above as trusted user, otherwise you'll need to manuall
 niv init
 ```
 
-## Add [haskell.nix](https://github.com/input-output-hk/haskell.nix)
-```sh
-niv add haskell.nix --owner input-output-hk --repo haskell.nix
-```
-
-## Add Nix files
+## Add These Nix files
 
 - [default.nix](./default.nix)
 - [shell.nix](./shell.nix)
@@ -30,10 +25,10 @@ niv add haskell.nix --owner input-output-hk --repo haskell.nix
 ## Set up cabal project
 
 ```sh
-nix-shell -p cabal-install --command 'cabal init --cabal-version=2.4 --license=MIT -p haskell-nix-template'
+nix-shell -p cabal-install --command 'cabal init --cabal-version=2.4 --license=MIT -p niv-shell'
 ```
 
-Edit the generated .cabal file. Example in [haskell-nix-template.cabal](./haskell-nix-template.cabal).
+Edit the generated .cabal file. Example in [niv-shell.cabal](./niv-shell.cabal).
 
 ## Create git repository and initial commit
 
